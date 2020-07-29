@@ -48,7 +48,7 @@ public class IntermediateActivity extends AppCompatActivity {
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     if (snapshot != null) {
                         final String usertype = String.valueOf(snapshot.child("usertype").getValue());
-                        if(usertype != null && usertype.equals("Care Reciever")){
+                        if(usertype != null && usertype.equals("Care Receiver")){
                             Intent intent = new Intent(IntermediateActivity.this,HomeActivity.class);
                             startActivity(intent);
                         }

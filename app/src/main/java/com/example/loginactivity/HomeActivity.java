@@ -63,6 +63,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     EditText temperature;
     EditText heartRate;
     Button viewData;
+    Button help;
     FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
 
@@ -78,7 +79,13 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         temperature = findViewById(R.id.temperature);
         heartRate = findViewById(R.id.heartRate);
         set = findViewById(R.id.setValue);
-
+        help = findViewById(R.id.help);
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openNewActivity();
+            }
+        });
         btnLogout = findViewById(R.id.logout);
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,6 +138,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(new Intent(getApplicationContext(), RetrieveMapActivity.class));
 
 
+    }
+    public void openNewActivity(){
+        Intent intent = new Intent(this,NewActivity.class);
+        startActivity(intent);
     }
 
     @Override
